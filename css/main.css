@@ -1,0 +1,21 @@
+
+.logo {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.nav-links {
+    width: 100%;
+}
+
+
+.right-align {
+    margin-left: 0;
+}
+
+@media (min-width: 992px) {
+    .right-align {
+        margin-left: auto;
+
+    }
+}
