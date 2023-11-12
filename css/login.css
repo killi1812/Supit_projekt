@@ -1,0 +1,16 @@
+.login-container {
+    background: gray;
+    border-radius: 1rem;
+    margin: 12rem auto;
+    padding: 2rem;
+    max-width: 30rem;
+}
+
+.login-container form a  > button{
+    width: 100%;
+}
+
+.login-container form a {
+    text-decoration: none;
+    color: unset;
+}

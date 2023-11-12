@@ -1,3 +1,6 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 
 .logo {
     width: 2.5rem;
@@ -13,9 +16,47 @@
     margin-left: 0;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 576px) {
     .right-align {
         margin-left: auto;
 
     }
 }
+
+@media (max-width: 910px) {
+    footer p {
+        font-size: 5vw !important;
+    }
+
+}
+
+footer {
+    max-height: 40rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+footer > img {
+    width: 100%;
+}
+
+p.center-text-on-foother {
+    width: fit-content;
+    border-radius: 4rem;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+}
+

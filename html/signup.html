@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algebra</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/bootstrap.bundle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+            <img class="logo" src="../img/Algebra-logo.png" alt="Algebra">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavBar"
+                aria-controls="smallNavBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="smallNavBar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">O nama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Novosti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontakti</a>
+                </li>
+                <li class="nav-item right-align">
+                    <a class="nav-link active" href="login.html">Prijavi se</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div class="login-container">
+    <h3>
+        Napravi račun
+    </h3>
+    <hr>
+    <form action="https://www.fulek.com/data/api/user/register" method="post">
+        <div class="form-floating mb-5">
+            <input type="email" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+            <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword2" placeholder="Password2">
+            <label for="floatingPassword2">Repeat Password</label>
+        </div>
+        <div class="d-grid gap-4 col-5 mx-auto m-3">
+            <button class="btn btn-primary" type="submit">Napravi novi račun</button>
+            <a href="login.html">
+                <button class="btn btn-primary" type="button">Idi na prijavu</button>
+            </a>
+        </div>
+    </form>
+</div>
+
+<footer class="bottom-0">
+    <img class="overflow-hidden" src="../img/zaiskri-bg.jpg" alt="Foother">
+    <p class="center-text-on-foother">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
+</footer>
+
+</body>
+</html>
