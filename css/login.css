@@ -6,6 +6,12 @@
     max-width: 30rem;
 }
 
+@media (max-width: 576px) {
+    .login-container {
+        margin: 2rem auto;
+    }
+}
+
 .login-container form a  > button{
     width: 100%;
 }
