@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
 </head>
 <body>
 
@@ -53,18 +54,18 @@
         Napravi račun
     </h3>
     <hr>
-    <form action="https://www.fulek.com/data/api/user/register" method="post">
+    <form id="register-form" method="post">
         <div class="form-floating mb-5">
-            <input type="email" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
-            <label for="floatingInput">Username</label>
+            <input type="email" class="form-control" id="username" name="username" placeholder="name@example.com">
+            <label for="username">Username</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <label for="password">Password</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword2" placeholder="Password2">
-            <label for="floatingPassword2">Repeat Password</label>
+            <input type="password" class="form-control" id="password2" placeholder="Password2">
+            <label for="password2">Repeat Password</label>
         </div>
         <div class="d-grid gap-4 col-7 mx-auto m-3">
             <button class="btn btn-primary" type="submit">Napravi novi račun</button>
@@ -74,6 +75,6 @@
         </div>
     </form>
 </div>
-
+<script src="../js/register.js"></script>
 </body>
 </html>

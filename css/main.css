@@ -11,15 +11,40 @@ body {
     width: 100%;
 }
 
+.nav-item{
+    height: 40px;
+}
 
 .right-align {
     margin-left: 0;
 }
 
-@media (min-width: 576px) {
+.flex-item {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item>:last-child {
+    padding: 0;
+}
+
+.nav-text{
+    color: var(--bs-body-color);
+    margin: auto 0 auto 0;
+}
+
+@media (min-width: 768px) {
     .right-align {
         margin-left: auto;
 
+    }
+    .flex-item {
+        flex-direction: row;
+    }
+    .flex-item>:last-child {
+        padding: 0 1rem 0 1rem ;
     }
 }
 
@@ -30,13 +55,18 @@ body {
 
 }
 
+
+.btn:hover {
+    color: white;
+}
+
 footer {
     max-height: 40rem;
     width: 100%;
     overflow: hidden;
     position: relative;
     text-align: center;
-    color: white;
+    color: var(--bs-body-color);
 }
 
 footer p {
@@ -60,13 +90,13 @@ footer > img {
     padding: 2rem;
 }
 
-#main-video{
+#main-video {
     width: 100%;
     margin-bottom: -6px;
 }
 
 @media (max-width: 420px) {
-    #main-video{
+    #main-video {
         height: 100%;
         width: 120%;
     }
@@ -78,20 +108,27 @@ footer > img {
     border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation:
-            typing 3.5s steps(40, end),
-            blink-caret .75s step-end infinite;
+    animation: typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange;
+    }
 }
 

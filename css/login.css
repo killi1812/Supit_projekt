@@ -6,7 +6,7 @@
     max-width: 30rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 767px) {
     .login-container {
         margin: 2rem auto;
     }
