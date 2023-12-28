@@ -1,4 +1,8 @@
 (() => {
+    import("./header.js").then(({navitems}) => {
+        navitems("./");
+    })
+
     const loginForm = document.querySelector("#login-form");
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");
