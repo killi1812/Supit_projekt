@@ -13,6 +13,11 @@
     });
 
     const login = () => {
+        const button = document.querySelector("#submit-loading-button");
+        button.innerHTML = `
+<div class="spinner-border" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`;
         const loginData = {
             username: username.value,
             password: password.value,
@@ -41,6 +46,9 @@
                     location.replace("../index.html");
                 })
                 .catch(() => alert("wrong email or password"))
+                .finally(() => {
+                    button.innerText = "Prijavi se";
+                })
         );
 
         const storeUserSessionLogin = (username, token) => {

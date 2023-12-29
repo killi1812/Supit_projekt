@@ -1,4 +1,4 @@
-export const navitems = (location) => {
+export const navitems = (path) => {
     const createLink = (text, href) => {
         const link = document.createElement("a");
         link.innerText = text;
@@ -26,7 +26,7 @@ export const navitems = (location) => {
 
             loginLabel.appendChild(button);
         } else {
-            loginLabel.appendChild(createLink("Prijavi se", `${location}/login.html`));
+            loginLabel.appendChild(createLink("Prijavi se", `${path}/login.html`));
         }
     }
     const nastavniPlanNavItem = (nastavniPlanHref) => {
@@ -34,7 +34,7 @@ export const navitems = (location) => {
             return;
 
         const li = document.querySelector("#nastavni-plan");
-        li.appendChild(createLink("Nastavni plan", `${location}/nastavniPlan.html`));
+        li.appendChild(createLink("Nastavni plan", `${path}/nastavniPlan.html`));
     }
     nastavniPlanNavItem();
     logoutHeader();

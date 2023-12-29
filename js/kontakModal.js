@@ -1,6 +1,9 @@
 const kontakModal = () => {
     const algebraModal = document.getElementById("algebra-modal");
-    if (algebraModal) algebraModal.style.display = "unset";
+    if (algebraModal) {
+        algebraModal.style.display = "unset";
+        return;
+    }
 
     const modal = document.createElement("div");
     modal.id = 'algebra-modal';
