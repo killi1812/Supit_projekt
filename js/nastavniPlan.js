@@ -95,14 +95,41 @@
         });
     }
 
-    const removeKolegij = () =>{
-        alert("not implementet");
+    function calculateFooter() {
+        const rows = [...document.getElementById("kolegij-table").children];
+        rows.splice(0,2);
+        const footer = document.querySelector("#kolegij-table tfoot>tr");
+        const values = {
+            ects: 0,
+            sati: 0,
+            predavanja: 0,
+            vjezbe: 0,
+        }
+        rows.forEach(row => {
+            values.ects += Number(row.children[1].innerText)
+            values.sati += Number(row.children[2].innerText)
+            values.predavanja += Number(row.children[3].innerText)
+            values.vjezbe += Number(row.children[4].innerText)
+        })
+        footer.innerHTML = `
+        <td></td>
+        <td>${values.ects}</td>
+        <td>${values.sati}</td>
+        <td>${values.predavanja}</td>
+        <td>${values.vjezbe}</td>
+        `
     }
 
-    const createListItem = (kolegij) =>{
-    const item = document.createElement("tr");
-    item.id = kolegij.id;
-    item.innerHTML = `
+
+    const removeKolegij = (event) => {
+        event.currentTarget.parentElement.parentElement.remove();
+        calculateFooter();
+    }
+
+    const createListItem = (kolegij) => {
+        const item = document.createElement("tr");
+        item.id = kolegij.id;
+        item.innerHTML = `
         <td>${kolegij.kolegij}</td>
         <td>${kolegij.ects}</td>
         <td>${kolegij.sati}</td>
@@ -113,35 +140,33 @@
             <button class="btn bg-danger">
             delete
             </button>
-        </td>
-        
-    `
-//TODO rijesi delitanje jako je cudno nemam pojma kako cu da napraviti
-        // <th>Kolegij</th>
-        // <th>ECTS</th>
-        // <th>Sati</th>
-        // <th>Predavanja</th>
-        // <th>Vježbe</th>
-        // <th>Tip</th>
-        // <th></th>
-    return item
+        </td>`
+        item.children[6].children[0].addEventListener("click", removeKolegij)
+        return item
     }
     const kolegiji = await getAllKolegij()
     autocomplete(document.getElementById("kolegij"), kolegiji);
-    const dodajKolegij = () =>{
+    const dodajKolegij = () => {
         const value = document.getElementById("kolegij").value;
         if (!value) {
             alert("Error");
             return;
         }
         const lista = document.querySelector("#kolegij-table");
-        if(kolegiji.length === 0) return;
-        debugger;
+        if (kolegiji.length === 0) return;
         const kolegij = kolegiji.find((kolegij) => kolegij.kolegij === value);
-        if(!kolegij) alert(`Kolegij ${value} ne postoji` )
+        if (!kolegij) alert(`Kolegij ${value} ne postoji`)
+        for (let i = 0; i < lista.children.length; i++) {
+            if (lista.children[i].id == kolegij.id) {
+                alert("nemoze");
+                return;
+            }
+        }
         lista.append(createListItem(kolegij));
+        document.getElementById("kolegij").value = ""
+        calculateFooter();
     }
 
-    document.querySelector("#submit-kolegiji").addEventListener("click",dodajKolegij);
+    document.querySelector("#submit-kolegiji").addEventListener("click", dodajKolegij);
 
 })()
