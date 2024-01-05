@@ -3,7 +3,6 @@
         navitems("./");
     })
 
-
     const getAllKolegij = async () => {
         const response = fetch(
             "https://www.fulek.com/data/api/supit/curriculum-list/hr",
@@ -120,7 +119,6 @@
         `
     }
 
-
     const removeKolegij = (event) => {
         event.currentTarget.parentElement.parentElement.remove();
         calculateFooter();
@@ -141,11 +139,15 @@
             delete
             </button>
         </td>`
+        //TODO stylati pointer
+        item.addEventListener("click",() =>{
+            location.href = `./kolegijDetails.html?id=${kolegij.id}`
+        })
+        //TODO delitanje ide na details isto
         item.children[6].children[0].addEventListener("click", removeKolegij)
+
         return item
     }
-    const kolegiji = await getAllKolegij()
-    autocomplete(document.getElementById("kolegij"), kolegiji);
     const dodajKolegij = () => {
         const value = document.getElementById("kolegij").value;
         if (!value) {
@@ -167,6 +169,8 @@
         calculateFooter();
     }
 
+    const kolegiji = await getAllKolegij()
+    autocomplete(document.getElementById("kolegij"), kolegiji);
     document.querySelector("#submit-kolegiji").addEventListener("click", dodajKolegij);
 
 })()
