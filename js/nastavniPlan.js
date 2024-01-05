@@ -139,11 +139,6 @@
             delete
             </button>
         </td>`
-        //TODO stylati pointer
-        item.addEventListener("click",() =>{
-            location.href = `./kolegijDetails.html?id=${kolegij.id}`
-        })
-        //TODO delitanje ide na details isto
         item.children[6].children[0].addEventListener("click", removeKolegij)
 
         return item
