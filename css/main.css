@@ -54,7 +54,6 @@ body {
     footer p {
         font-size: 5vw !important;
     }
-
 }
 
 
@@ -93,7 +92,7 @@ footer > img {
 #algebra-modal > .modal-dialog {
     margin: auto;
     margin-top: 10rem;
-    width: 30rem;
+    max-width: 30rem;
     /*todo scalyng na mobitelu*/
     background: white;
     padding: 1rem;

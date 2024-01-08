@@ -11,6 +11,11 @@ hr{
 #kolegijautocomplete-list{
     border: 2px solid black;
 }
+
+#kolegij-table{
+    max-width: 35%;
+}
+
 .nastavni-container{
     display: flex;
     flex-direction: row;
@@ -21,6 +26,16 @@ hr{
 .nastavni-container>div{
     padding: 2rem;
     min-width:30% ;
+}
+
+@media (max-width: 767px) {
+    .nastavni-container{
+        flex-direction: column;
+    }
+    .list-side{
+        width: 100%;
+        overflow: scroll;
+    }
 }
 
 .form-floating{
