@@ -1,6 +1,6 @@
 (async () => {
   import("./header.js").then(({ navitems }) => {
-    navitems("./");
+    navitems(".");
   });
 
   const getAllKolegij = async () => {
