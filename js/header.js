@@ -26,14 +26,19 @@ export const navitems = (path) => {
 
             loginLabel.appendChild(button);
         } else {
+            loginLabel.appendChild(createLink("Registriraj se", `${path}/signup.html`));
             loginLabel.appendChild(createLink("Prijavi se", `${path}/login.html`));
         }
     }
     const nastavniPlanNavItem = (nastavniPlanHref) => {
-        if (!sessionStorage.getItem("token"))
-            return;
-
         const li = document.querySelector("#nastavni-plan");
+        if (!sessionStorage.getItem("token")){
+            li.style.display = "none";
+            return;
+        }
+        li.style.display = "block";
+        if (li.children.length > 0)
+            return;
         li.appendChild(createLink("Nastavni plan", `${path}/nastavniPlan.html`));
     }
     nastavniPlanNavItem();

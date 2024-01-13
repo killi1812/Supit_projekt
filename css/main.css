@@ -35,10 +35,16 @@ body {
     margin: auto 0 auto 0;
 }
 
+@media (max-width: 767px) {
+    .phone-container {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+}
+
 @media (min-width: 768px) {
     .right-align {
         margin-left: auto;
-
     }
 
     .flex-item {
@@ -72,6 +78,7 @@ footer {
 }
 
 footer p {
+    color: white;
     margin: 0;
     font-size: 3rem;
     font-weight: 700;
@@ -93,11 +100,15 @@ footer > img {
 #algebra-modal > .modal-dialog {
     margin: auto;
     margin-top: 10rem;
-    width: 30rem;
+    max-width: 30rem;
     /*todo scalyng na mobitelu*/
     background: white;
     padding: 1rem;
     border-radius: 1rem;
+}
+
+.btn-mrgl {
+    margin-left: 1rem;
 }
 
 .center-text-on {
@@ -111,19 +122,30 @@ footer > img {
     padding: 2rem;
 }
 
-#main-video {
-    width: 100%;
-    margin-bottom: -6px;
+#video-bg {
+    position: relative;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    background: transparent no-repeat;
+    background-size: cover;
 }
 
-@media (max-width: 420px) {
-    #main-video {
-        height: 100%;
-        width: 120%;
-    }
+video {
+    display: block;
+}
+
+.video-container {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -100;
 }
 
 .typewriter h1 {
+    font-size: 2vh;
     color: white;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
