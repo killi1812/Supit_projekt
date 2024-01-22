@@ -6,8 +6,13 @@
     border-radius: 5px;
 }
 
+.img-container{
+    display: flex;
+    flex-direction: row;
+}
+
 .big-img {
-    width: 100%;
+    width: 50%;
 }
 
 .text-box p {
@@ -33,4 +38,8 @@ iframe {
         width: -moz-available;
         height: auto;
     }
+    .big-img {
+        width: 100%;
+    }
+    
 }

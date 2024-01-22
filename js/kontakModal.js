@@ -13,11 +13,11 @@ const kontakModal = () => {
         closeModal();
     })
     modal.innerHTML = `
-          <div class="modal-dialog">
+          <div class="modal-dialog phone-container">
             <div class="modal-content">
               <div class="modal-header">
                 <h3 class="modal-title">Kontakt</h3>
-                <button type="button" onclick="closeModal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" onclick="closeModal()" class="btn-close" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form action="https://www.fulek.com/mvc/supit/project-contact-form" >

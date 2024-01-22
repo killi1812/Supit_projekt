@@ -3,6 +3,13 @@ export const navitems = (path) => {
         const link = document.createElement("a");
         link.innerText = text;
         link.href = href;
+       
+        const links = window.location.href.split('/');
+        const loc = links[links.length-1];
+        if(`./${loc}` === href)
+        link.className = "nav-link active";
+
+        else
         link.className = "nav-link";
 
         return link;

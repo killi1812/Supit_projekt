@@ -1,6 +1,6 @@
 (() => {
     import("./header.js").then(({navitems}) => {
-        navitems("./");
+        navitems(".");
     })
 
     const loginForm = document.querySelector("#login-form");
