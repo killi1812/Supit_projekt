@@ -37,11 +37,10 @@
             result
                 .json()
                 .then(({isSuccess, errorMessages}) => {
-                    if (isSuccess){
+                    if (isSuccess) {
                         location.replace("login.html");
                         alert("Accont created please login");
-                    }
-                    else if (errorMessages.length > 0)
+                    } else if (errorMessages.length > 0)
                         alert(errorMessages.join("\n"));
                 })
                 .catch(() => alert("wrong email or password"))
