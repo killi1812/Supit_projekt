@@ -15,41 +15,57 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top" data-bs-theme="dark">
+<nav
+        class="navbar navbar-expand-md bg-body-tertiary sticky-top"
+        data-bs-theme="dark"
+>
     <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">
-            <img class="logo" src="../img/Algebra-logo.png" alt="Algebra">
+            <img class="logo" src="../img/Algebra-logo.png" alt="Algebra"/>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavBar"
-                aria-controls="smallNavBar" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#smallNavBar"
+                aria-controls="smallNavBar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="smallNavBar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
+            <ul
+                    id="navbar-list"
+                    class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
+            >
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Početna</a>
+                    <a class="nav-link " href="../index.html">Početna</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="o-nama.html">O nama</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Novosti</a>
+                    <a class="nav-link" href="novosti.html">Novosti</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kontakti</a>
+                    <a class="nav-link" onclick="kontakModal()" href="#">Kontakti</a>
                 </li>
-                <li class="nav-item right-align">
-                    <a class="nav-link active" href="login.html">Prijavi se</a>
+                <li id="nastavni-plan" class="nav-item"></li>
+                <li
+                        id="login-register-label"
+                        class="nav-item active right-align flex-item"
+                >
+                    <!--                        TODO ovo treba biti active kada sam na registriraj se-->
                 </li>
             </ul>
         </div>
-
     </div>
 </nav>
 
-<div class="login-container">
+<div class="phone-container login-container">
     <h3>
         Napravi račun
     </h3>
@@ -76,5 +92,6 @@
     </form>
 </div>
 <script src="../js/register.js"></script>
+<script src="../js/kontakModal.js"></script>
 </body>
 </html>

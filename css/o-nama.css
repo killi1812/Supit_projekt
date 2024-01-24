@@ -6,14 +6,25 @@
     border-radius: 5px;
 }
 
+.img-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.big-img {
+    width: 50%;
+}
+
 .text-box p {
     font-size: 16px;
     line-height: 1.5;
 }
+
 .text-box>div {
     margin: auto;
     width: fit-content;
 }
+
 iframe {
     width: 100%;
     height: 40rem;
@@ -23,7 +34,12 @@ iframe {
 
 @media (max-width: 768px) {
     .text-box {
-        width: 100%;
+        /*ovo radi iako ima error*/
+        width: -moz-available;
         height: auto;
     }
+    .big-img {
+        width: 100%;
+    }
+    
 }
