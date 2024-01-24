@@ -34,17 +34,18 @@
     gap: 1rem;
     position: fixed;
     width: 100%;
-}
 
-.nav-link {
-    color: whitesmoke;
-    border-radius: 1rem;
-}
 
-.nav-link:hover {
-    border-radius: 1rem;
-    background: darkgray;
-    color: black;
+    .nav-link {
+        color: whitesmoke;
+        border-radius: 1rem;
+    }
+
+    .nav-link:hover {
+        border-radius: 1rem;
+        background: darkgray;
+        color: black;
+    }
 }
 
 .text-box:first-child {

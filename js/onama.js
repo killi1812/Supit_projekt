@@ -21,13 +21,20 @@
             });
             onama.appendChild(item);
         }
+        const item = document.createElement("li")
+        item.classList.add("nav-item")
+        item.innerHTML = `<a class="nav-link ">Idi na Početak</a>`
+        item.addEventListener("click", () => {
+            window.scrollTo({top:0, behavior: "smooth"});
+        });
+        onama.appendChild(item);
     }
 
     function scrollToTargetAdjusted(elementId) {
-        var element = document.getElementById(elementId);
-        var headerOffset = 65;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const element = document.getElementById(elementId);
+        const headerOffset = 65;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
             top: offsetPosition,
