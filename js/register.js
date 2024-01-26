@@ -43,7 +43,7 @@
                     } else if (errorMessages.length > 0)
                         alert(errorMessages.join("\n"));
                 })
-                .catch(() => alert("wrong email or password"))
+                .catch(() => alert("Error registering try again later"))
         );
     }
 })();

@@ -15,9 +15,8 @@
     const login = () => {
         const button = document.querySelector("#submit-loading-button");
         button.innerHTML = `
-<div class="spinner-border" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>`;
+            <div class="spinner-border" role="status">
+            </div>`;
         const loginData = {
             username: username.value,
             password: password.value,
