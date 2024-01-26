@@ -150,6 +150,8 @@
     const getKolegijDetails = async (event) => {
         if (event.explicitOriginalTarget.className === "btn bg-danger") return;
         const kolegij = await getKolegij(event.currentTarget.id);
+        
+        modal.show();
         console.log(kolegij);
     };
 
@@ -194,6 +196,8 @@
         document.getElementById("kolegij").value = "";
         calculateFooter();
     };
+
+    const modal = new bootstrap.Modal(document.getElementById("exampleModal"),{});
 
     const kolegiji = await getAllKolegij();
     autocomplete(document.getElementById("kolegij"), kolegiji);
