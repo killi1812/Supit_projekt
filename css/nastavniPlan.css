@@ -120,5 +120,6 @@ table.greyGridTable tfoot td {
 
     .search-side{
         width: 100% !important;
+        justify-content: center;
     }
 }

@@ -197,7 +197,7 @@
         calculateFooter();
     };
 
-    const modal = new bootstrap.Modal(document.getElementById("exampleModal"),{});
+    const modal = new bootstrap.Modal(document.getElementById("KolegijModal"),{});
 
     const kolegiji = await getAllKolegij();
     autocomplete(document.getElementById("kolegij"), kolegiji);
