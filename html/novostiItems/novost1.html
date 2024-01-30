@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../../css/bootstrap.css" />
     <link rel="stylesheet" href="../../css/main.css" />
     <link rel="stylesheet" href="../../css/login.css" />
+    <link rel="stylesheet" href="../../css/novosti.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,27 +70,102 @@
       </div>
     </nav>
     <main>
-        <img src="../../img/novost1.jpg" alt="Novost1">
-        <h1>Novost1</h1>
-        <p>
-            Nakon godinu dana priprema za natjecanje WorldSkills
-            Kazan 2019 na kojem je sudjelovalo 1300 natjecatelja iz
-            cijelog svijeta, trud se itekako isplatio. Josip,
-            student 3. godine preddiplomskog studija sistemskog
-            inženjerstva osvojio je 12. mjesto u vještini IT
-            Networks and System Administration te osvojio medalju
-            izvrsnosti! Čestitke Josipu ali i njegovim/našim
-            mentorima koji su ga pripremali za ovo natjecanje –
-            voditelju studija sistemskog inženjerstva Silviju
-            Papiću, voditelju katedre za operacijske sustave –
-            Vedranu Dakiću i asistentu na studiju sistemskog
-            inženjerstva – Jasminu Redžepagiću. Čestitke i našem
-            studentu 3.godine preddiplomskog studija programskog
-            inženjerstva Josipu Horvatu i mentoru voditelju katedre
-            za programsko inženjerstvo - Goranu Đambiću na osvojenom
-            16.mjestu u vještini IT Software Solutions for Business.
-        </p>
-        <video src="../../video/novost1.mp4" controls></video>
+
+      <h1 class="novost-naslov">Novost1</h1>
+      <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="novostiItems/novost1.html"
+              ><img
+                src="../../img/novost1.jpg"
+                class="d-block w-100"
+                alt="novost1"
+            /></a>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../../img/novost2.jpg"
+              class="d-block w-100"
+              alt="novost2"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="../../img/novost3.jpg"
+              class="d-block w-100"
+              alt="novost3"
+            />
+          </div>
+          <div class="carousel-item">
+            <video
+              class="d-block w-100"
+              src="../../video/worldskills.mp4"
+              controls
+            ></video>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <p class="main-text">
+        Nakon godinu dana priprema za natjecanje WorldSkills Kazan 2019 na kojem
+        je sudjelovalo 1300 natjecatelja iz cijelog svijeta, trud se itekako
+        isplatio. Josip, student 3. godine preddiplomskog studija sistemskog
+        inženjerstva osvojio je 12. mjesto u vještini IT Networks and System
+        Administration te osvojio medalju izvrsnosti! Čestitke Josipu ali i
+        njegovim/našim mentorima koji su ga pripremali za ovo natjecanje –
+        voditelju studija sistemskog inženjerstva Silviju Papiću, voditelju
+        katedre za operacijske sustave – Vedranu Dakiću i asistentu na studiju
+        sistemskog inženjerstva – Jasminu Redžepagiću. Čestitke i našem studentu
+        3.godine preddiplomskog studija programskog inženjerstva Josipu Horvatu
+        i mentoru voditelju katedre za programsko inženjerstvo - Goranu Đambiću
+        na osvojenom 16.mjestu u vještini IT Software Solutions for Business.
+      </p>
+
     </main>
     <script src="../../js/bootstrap.bundle.js"></script>
     <script src="../../js/novost.js"></script>

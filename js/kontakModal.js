@@ -1,23 +1,26 @@
-const kontakModal = () => {
-    const algebraModal = document.getElementById("algebra-modal");
-    if (algebraModal) {
-        algebraModal.style.display = "unset";
-        return;
-    }
+(() => {
 
+  const kontakModalInit = () => {
     const modal = document.createElement("div");
-    modal.id = 'algebra-modal';
-    modal.addEventListener("click", (e) => {
-        if (e.target !== document.getElementById("algebra-modal"))
-            return;
-        closeModal();
-    })
+
+    modal.classList.add("modal");
+    modal.classList.add("fade");
+    modal.setAttribute("tabindex", "-1");
+    modal.setAttribute("aria-hidden", "true");
+    modal.setAttribute("data-bs-backdrop","static");
+  
+    modal.id = "algebra-modal";
+     modal.addEventListener("click", (e) => {
+       if (e.target !== document.getElementById("algebra-modal")) return;
+       closeModal();
+     });
+
     modal.innerHTML = `
           <div class="modal-dialog phone-container">
             <div class="modal-content">
               <div class="modal-header">
                 <h3 class="modal-title">Kontakt</h3>
-                <button type="button" onclick="closeModal()" class="btn-close" aria-label="Close"></button>
+                <button type="button" data-bs-dismiss="modal" class="btn-close" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form action="https://www.fulek.com/mvc/supit/project-contact-form" >
@@ -46,7 +49,7 @@ const kontakModal = () => {
                     <label class="form-check-label" for="ReceiveNewsletter">Želim primati obavijesti</label>
                   </div>
                     <div class="modal-footer">
-                    <button type="button" onclick="closeModal()"  class="btn btn-secondary btn-mrgl " data-bs-dismiss="modal">Zatvori</button>
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary btn-mrgl " data-bs-dismiss="modal">Zatvori</button>
                     <button type="submit" class="btn btn-primary btn-mrgl ">Posalji</button>
                   </div>
                 </form>
@@ -54,11 +57,23 @@ const kontakModal = () => {
             </div>
           </div>
        `;
-
+  
     document.body.append(modal);
-}
-const closeModal = () => {
-//TODO nece se clzati drugi put
-    const modal = document.getElementById("algebra-modal");
-    modal.style.display = "none";
-}
+  }
+  const closeModal = () => {
+    //TODO nece se clzati drugi put
+    const algebraModal = bootstrap.Modal.getInstance(
+      document.getElementById("algebra-modal")
+    );
+    algebraModal.hide();
+  };
+  
+kontakModalInit();
+
+})()
+
+const kontakModal = () => {
+  const algebramodal = document.getElementById("algebra-modal");
+  const algebraModal = bootstrap.Modal.getOrCreateInstance(algebramodal);
+  algebraModal.show();
+};

@@ -35,37 +35,6 @@ body {
     margin: auto 0 auto 0;
 }
 
-@media (max-width: 520px) {
-    .phone-container {
-        margin-left: 1rem !important;
-        margin-right: 1rem !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .right-align {
-        margin-left: auto;
-    }
-
-    .flex-item {
-        flex-direction: row;
-    }
-
-    .flex-item > :last-child {
-        padding: 0 1rem 0 1rem;
-    }
-}
-
-@media (max-width: 910px) {
-    footer p {
-        font-size: 2vw !important;
-    }
-
-    .typewriter h1 {
-        font-size: 2vh;
-    }
-}
-
 .btn:hover {
     color: white;
 }
@@ -90,23 +59,9 @@ footer > img {
     width: 100%;
 }
 
-#algebra-modal {
-    position: fixed;
-    z-index: 10000;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(88, 88, 88, 0.3);
-}
-
 #algebra-modal > .modal-dialog {
-    margin: auto;
     margin-top: 10rem;
     max-width: 30rem;
-    /*todo scalyng na mobitelu*/
-    background: white;
-    padding: 1rem;
-    border-radius: 1rem;
 }
 
 .btn-mrgl {
@@ -151,6 +106,38 @@ footer > img {
     top: 0;
     right: 0;
     z-index: -100;
+}
+
+@media (max-width: 910px) {
+    footer p {
+        font-size: 2vw !important;
+    }
+
+    .typewriter h1 {
+        font-size: 4vw;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .phone-container {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .right-align {
+        margin-left: auto;
+    }
+
+    .flex-item {
+        flex-direction: row;
+    }
+
+    .flex-item > :last-child {
+        padding: 0 1rem 0 1rem;
+    }
 }
 
 .typewriter h1 {
