@@ -110,7 +110,7 @@ footer > img {
 
 @media (max-width: 910px) {
     footer p {
-        font-size: 2vw !important;
+        font-size: 4vw !important;
     }
 
     .typewriter h1 {

@@ -1,14 +1,14 @@
-h1{
+h1 {
     text-align: center;
 }
 
-hr{
- border: 2px solid;
+hr {
+    border: 2px solid;
     margin: auto;
     width: 80%;
 }
 
-#kolegijautocomplete-list{
+#kolegijautocomplete-list {
     border: 2px solid black;
     border-top: 0;
     border-radius: 5px;
@@ -19,55 +19,56 @@ hr{
     overflow: scroll;
 }
 
-#kolegijautocomplete-list div{
+#kolegijautocomplete-list div {
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#kolegijautocomplete-list div:hover{
+#kolegijautocomplete-list div:hover {
     background: #e9e9e9;
 }
-#kolegij-table{
+
+#kolegij-table {
     width: 35%;
 }
 
-#submit-kolegiji{
+#submit-kolegiji {
     height: 2.5rem;
 }
 
-.search-side{
-    width:35%;
+.search-side {
+    width: 35%;
     display: flex;
     flex-direction: row-reverse;
     gap: 2rem;
     justify-content: start;
 }
 
-.nastavni-container{
+.nastavni-container {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     justify-content: center;
 }
 
-.nastavni-container>div{
+.nastavni-container > div {
     padding: 2rem;
-    width:30% ;
+    width: 30%;
 }
 
-.kolegij-container{
+.kolegij-container {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     justify-content: space-around;
 }
 
-.kolegij-modal-text{
+.kolegij-modal-text {
     text-align: center;
 }
 
-.form-floating{
+.form-floating {
     max-width: 25rem;
 }
 
@@ -115,21 +116,30 @@ table.greyGridTable tfoot td {
     font-size: 14px;
 }
 
+@media (max-width: 767px) {
+    .hide-phone {
+        display: none;
+    }
+}
+
 @media (max-width: 1260px) {
-    .nastavni-container{
+    .nastavni-container {
         flex-direction: column;
     }
 
-    .list-side{
+    .list-side {
         width: 100% !important;
         overflow: scroll;
     }
-    #kolegij-table{
+
+    #kolegij-table {
         width: 100% !important;
     }
 
-    .search-side{
+    .search-side {
         width: 100% !important;
         justify-content: center;
     }
+
+
 }

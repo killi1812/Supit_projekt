@@ -145,11 +145,11 @@
             values.vjezbe += Number(row.children[4].innerText);
         });
         footer.innerHTML = `
-        <td></td>
-        <td>${values.ects}</td>
-        <td>${values.sati}</td>
-        <td>${values.predavanja}</td>
-        <td>${values.vjezbe}</td>
+        <td  class="hide-phone">Ukupno</td>
+        <td  class="hide-phone">${values.ects}</td>
+        <td  class="hide-phone">${values.sati}</td>
+        <td  class="hide-phone">${values.predavanja}</td>
+        <td  class="hide-phone">${values.vjezbe}</td>
         `;
     }
 
@@ -184,11 +184,11 @@
         item.id = kolegij.id;
         item.innerHTML = `
         <td>${kolegij.kolegij}</td>
-        <td>${kolegij.ects}</td>
-        <td>${kolegij.sati}</td>
-        <td>${kolegij.predavanja}</td>
-        <td>${kolegij.vjezbe}</td>
-        <td>${kolegij.tip}</td>
+        <td  class="hide-phone">${kolegij.ects}</td>
+        <td  class="hide-phone">${kolegij.sati}</td>
+        <td  class="hide-phone">${kolegij.predavanja}</td>
+        <td  class="hide-phone">${kolegij.vjezbe}</td>
+        <td  class="hide-phone">${kolegij.tip}</td>
         <td>
             <button class="btn bg-danger">
             delete
