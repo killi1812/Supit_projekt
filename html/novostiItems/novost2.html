@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/x-icon" href="../../img/Algebra-logo.png">
+    <title>Algebra</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <link rel="stylesheet" href="../../css/login.css"/>
+    <link rel="stylesheet" href="../../css/novosti.css"/>
+    <link rel="stylesheet" href="../../css/normalize.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<nav
+        class="navbar navbar-expand-md bg-body-tertiary sticky-top"
+        data-bs-theme="dark"
+>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">
+            <img class="logo" src="../../img/Algebra-logo.png" alt="Algebra"/>
+        </a>
+
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#smallNavBar"
+                aria-controls="smallNavBar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="smallNavBar">
+            <ul
+                    id="navbar-list"
+                    class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
+            >
+                <li class="nav-item">
+                    <a class="nav-link active" href="../../index.html">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../o-nama.html">O nama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../novosti.html">Novosti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="kontakModal()" href="#">Kontakti</a>
+                </li>
+                <li id="nastavni-plan" class="nav-item"></li>
+                <li
+                        id="login-register-label"
+                        class="nav-item right-align flex-item"
+                ></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+
+    <div class="novost-naslov"><a class="back-arrow" href="../novosti.html"> &#10094; </a> <span>Novost 2</span></div>
+
+    <div class="carousel">
+        <img src="../../img/novost2.jpg" class="slika-novosti" alt="Novost 2">
+    </div>
+    <p class="main-text">
+        Nakon velikog broja prijava koje smo primili, detaljnom analizom i provjerom utvrdili smo dobitnike ovogodišnjeg
+        stipendijskog natječaja
+        za maturante! Stipendiju u vrijednosti od 10.000,00 kuna na potrošačkoj kartici dobivaju: Heidi Sokolovski iz
+        Zagreba - za najbolji rezultat
+        iz Matematike na A razini osvojila je stipendiju u iznosu od 10.000,00 kn. Tereza Žugaj iz Zagreba - za najbolji
+        rezultat iz Matematike na B
+        razini osvojila je stipendiju u iznosu od 10.000,00 kn. Dalija Romac iz Sinja - za najbolji rezultat iz
+        Hrvatskog jezika na A razini te dodatna
+        204 boda za rezultat iz Matematike A i Engleskog jezika A osvojila je stipendiju u iznosu od 10.000,00 kn. Ella
+        Milinović iz Zagreba - za najbolji
+        rezultat iz Hrvatskog jezika na B razini osvojila je stipendiju u iznosu od 10.000,00 kn. Borna Skračić iz Zadra
+        – za najbolji rezultat iz Engleskog
+        jezika na A razini osvojio je stipendiju u iznosu od 10.000,00 kn. Lukas Božić iz Umaga - za najbolji rezultat
+        iz Engleskog jezika na B razini
+        osvojio je stipendiju u iznosu od 10.000,00 kn.
+    </p>
+
+</main>
+<footer class="bottom-0">
+    <img class="overflow-hidden" src="../../img/zaiskri-bg.jpg" alt="Foother"/>
+    <p class="center-text-on">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
+</footer>
+
+<script src="../../js/bootstrap.bundle.js"></script>
+<script src="../../js/novost.js"></script>
+<script src="../../js/kontakModal.js"></script>
+</body>
+</html>

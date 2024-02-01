@@ -1,157 +1,141 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
+<html lang="hr">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/x-icon" href="../../img/Algebra-logo.png">
     <title>Algebra</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../../css/bootstrap.css" />
-    <link rel="stylesheet" href="../../css/main.css" />
-    <link rel="stylesheet" href="../../css/login.css" />
-    <link rel="stylesheet" href="../../css/novosti.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <link rel="stylesheet" href="../../css/login.css"/>
+    <link rel="stylesheet" href="../../css/novosti.css"/>
+    <link rel="stylesheet" href="../../css/normalize.css"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="./../css/normalize.css" />
-  </head>
-  <body>
-    <nav
-      class="navbar navbar-expand-md bg-body-tertiary sticky-top"
-      data-bs-theme="dark"
-    >
-      <div class="container-fluid">
+</head>
+<body>
+<nav
+        class="navbar navbar-expand-md bg-body-tertiary sticky-top"
+        data-bs-theme="dark"
+>
+    <div class="container-fluid">
         <a class="navbar-brand" href="../../index.html">
-          <img class="logo" src="../../img/Algebra-logo.png" alt="Algebra" />
+            <img class="logo" src="../../img/Algebra-logo.png" alt="Algebra"/>
         </a>
 
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#smallNavBar"
-          aria-controls="smallNavBar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#smallNavBar"
+                aria-controls="smallNavBar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="smallNavBar">
-          <ul
-            id="navbar-list"
-            class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
-          >
-            <li class="nav-item">
-              <a class="nav-link active" href="../../index.html">Početna</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../o-nama.html">O nama</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../novosti.html">Novosti</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick="kontakModal()" href="#">Kontakti</a>
-            </li>
-            <li id="nastavni-plan" class="nav-item"></li>
-            <li
-              id="login-register-label"
-              class="nav-item right-align flex-item"
-            ></li>
-          </ul>
+            <ul
+                    id="navbar-list"
+                    class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
+            >
+                <li class="nav-item">
+                    <a class="nav-link active" href="../../index.html">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../o-nama.html">O nama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../novosti.html">Novosti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="kontakModal()" href="#">Kontakti</a>
+                </li>
+                <li id="nastavni-plan" class="nav-item"></li>
+                <li
+                        id="login-register-label"
+                        class="nav-item right-align flex-item"
+                ></li>
+            </ul>
         </div>
-      </div>
-    </nav>
-    <main>
+    </div>
+</nav>
+<main>
 
-      <h1 class="novost-naslov">Novost1</h1>
-      <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+    <div class="novost-naslov"><a class="back-arrow" href="../novosti.html"> &#10094; </a> <span>Novost 1</span></div>
+
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
         <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-          <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="3"
-          aria-label="Slide 4"
-        ></button>
+            <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+            ></button>
+            <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+            ></button>
+            <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+            ></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a href="novostiItems/novost1.html"
-              ><img
-                src="../../img/novost1.jpg"
-                class="d-block w-100"
-                alt="novost1"
-            /></a>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="../../img/novost2.jpg"
-              class="d-block w-100"
-              alt="novost2"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="../../img/novost3.jpg"
-              class="d-block w-100"
-              alt="novost3"
-            />
-          </div>
-          <div class="carousel-item">
-            <video
-              class="d-block w-100"
-              src="../../video/worldskills.mp4"
-              controls
-            ></video>
-          </div>
+            <div class="carousel-item active">
+                <img
+                        src="../../img/galerija1.jpg"
+                        class="d-block w-100"
+                        alt="novost1"
+                />
+            </div>
+            <div class="carousel-item">
+                <img
+                        src="../../img/galerija2.jpg"
+                        class="d-block w-100"
+                        alt="novost2"
+                />
+            </div>
+            <div class="carousel-item">
+                <img
+                        src="../../img/novost3.jpg"
+                        class="d-block w-100"
+                        alt="novost3"
+                />
+            </div>
         </div>
         <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
-      </div>
-      <p class="main-text">
+    </div>
+    <p class="main-text">
         Nakon godinu dana priprema za natjecanje WorldSkills Kazan 2019 na kojem
         je sudjelovalo 1300 natjecatelja iz cijelog svijeta, trud se itekako
         isplatio. Josip, student 3. godine preddiplomskog studija sistemskog
@@ -164,11 +148,24 @@
         3.godine preddiplomskog studija programskog inženjerstva Josipu Horvatu
         i mentoru voditelju katedre za programsko inženjerstvo - Goranu Đambiću
         na osvojenom 16.mjestu u vještini IT Software Solutions for Business.
-      </p>
+    </p>
 
-    </main>
-    <script src="../../js/bootstrap.bundle.js"></script>
-    <script src="../../js/novost.js"></script>
-    <script src="../../js/kontakModal.js"></script>
-  </body>
+    <div class="video-novost">
+        <video
+                src="../../video/worldskills.mp4"
+                controls
+        ></video>
+    </div>
+
+
+</main>
+<footer class="bottom-0">
+    <img class="overflow-hidden" src="../../img/zaiskri-bg.jpg" alt="Foother"/>
+    <p class="center-text-on">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
+</footer>
+
+<script src="../../js/bootstrap.bundle.js"></script>
+<script src="../../js/novost.js"></script>
+<script src="../../js/kontakModal.js"></script>
+</body>
 </html>

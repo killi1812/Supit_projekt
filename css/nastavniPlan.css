@@ -56,6 +56,16 @@ hr{
     width:30% ;
 }
 
+.kolegij-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.kolegij-modal-text{
+    text-align: center;
+}
 
 .form-floating{
     max-width: 25rem;

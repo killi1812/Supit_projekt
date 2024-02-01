@@ -1,118 +1,117 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
+<html lang="hr">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/x-icon" href="../img/Algebra-logo.png">
     <title>Algebra</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/bootstrap.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/novosti.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/normalize.css"/>
+    <link rel="stylesheet" href="../css/novosti.css"/>
     <script src="../js/bootstrap.bundle.js"></script>
-  </head>
-  <body>
-    <nav
-      class="navbar navbar-expand-md bg-body-tertiary sticky-top"
-      data-bs-theme="dark"
-    >
-      <div class="container-fluid">
+</head>
+<body>
+<nav
+        class="navbar navbar-expand-md bg-body-tertiary sticky-top"
+        data-bs-theme="dark"
+>
+    <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">
-          <img class="logo" src="../img/Algebra-logo.png" alt="Algebra" />
+            <img class="logo" src="../img/Algebra-logo.png" alt="Algebra"/>
         </a>
 
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#smallNavBar"
-          aria-controls="smallNavBar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#smallNavBar"
+                aria-controls="smallNavBar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="smallNavBar">
-          <ul
-            id="navbar-list"
-            class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
-          >
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Početna</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="o-nama.html">O nama</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="novosti.html">Novosti</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick="kontakModal()" href="#">Kontakti</a>
-            </li>
-            <li id="nastavni-plan" class="nav-item"></li>
-            <li
-              id="login-register-label"
-              class="nav-item right-align flex-item"
-            ></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <div class="novosti-container">
-        <div class="card">
-          <img src="../img/novost1.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Natjecanje</h5>
-            <p class="card-text">
-              Student 3. godine sistemskog
-              inženjerstva osvojio je 12. mjesto. na natjecanju
-            </p>
-            <a href="novostiItems/novost1.html" class="btn btn-primary"
-              >Pročitaj</a
+            <ul
+                    id="navbar-list"
+                    class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
             >
-          </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="o-nama.html">O nama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="novosti.html">Novosti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="kontakModal()" href="#">Kontakti</a>
+                </li>
+                <li id="nastavni-plan" class="nav-item"></li>
+                <li
+                        id="login-register-label"
+                        class="nav-item right-align flex-item"
+                ></li>
+            </ul>
         </div>
+    </div>
+</nav>
+<main>
+    <div class="novosti-container">
         <div class="card">
-          <img src="../img/novost2.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="novostiItems/novost2.html" class="btn btn-primary"
-              >Pročitaj</a
-            >
-          </div>
+            <img src="../img/novost1.jpg" class="card-img-top" alt="..."/>
+            <div class="card-body">
+                <h5 class="card-title">Natjecanje</h5>
+                <p class="card-text">
+                    Student 3. godine sistemskog
+                    inženjerstva osvojio je 12. mjesto. na natjecanju
+                </p>
+                <a href="novostiItems/novost1.html" class="btn btn-primary btn-novost"
+                >Pročitaj</a
+                >
+            </div>
         </div>
         <div class="card">
-          <img src="../img/novost3.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="novostiItems/novost3.html" class="btn btn-primary"
-              >Pročitaj</a
-            >
-          </div>
+            <img src="../img/novost2.jpg" class="card-img-top" alt="..."/>
+            <div class="card-body">
+                <h5 class="card-title">Stipendije</h5>
+                <p class="card-text">
+                    Utvrdili smo dobitnike ovogodišnjeg
+                    stipendijskog natječaja za upis na studij
+                </p>
+                <a href="novostiItems/novost2.html" class="btn btn-primary btn-novost"
+                >Pročitaj</a
+                >
+            </div>
         </div>
-      </div>
-    </main>
-    <footer class="bottom-0">
-      <img class="overflow-hidden" src="../img/zaiskri-bg.jpg" alt="Foother" />
-      <p class="center-text-on">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
-    </footer>
-    <script src="../js/novosti.js"></script>
-    <script src="../js/kontakModal.js"></script>
-  </body>
+        <div class="card">
+            <img src="../img/novost3.jpg" class="card-img-top" alt="..."/>
+            <div class="card-body">
+                <h5 class="card-title">Radionice</h5>
+                <p class="card-text">
+                    Algebra Junior organizira edukativne i zabavne ljetne praznike za sve osnovnoškolce
+                </p>
+                <a href="novostiItems/novost3.html" class="btn btn-primary btn-novost"
+                >Pročitaj</a
+                >
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bottom-0">
+    <img class="overflow-hidden" src="../img/zaiskri-bg.jpg" alt="Foother"/>
+    <p class="center-text-on">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
+</footer>
+<script src="../js/novosti.js"></script>
+<script src="../js/kontakModal.js"></script>
+</body>
 </html>

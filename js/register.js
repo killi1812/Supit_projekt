@@ -10,19 +10,26 @@
 
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        register();
-    });
 
-    const register = () => {
-        if (password.value !== passwordConfirm.value) {
-            alert("passwords do not match");
+        if (username.value === "" || password.value === "" || passwordConfirm.value === "") {
+            alert("Popunite sva polja!");
             return;
         }
 
-        const loginData = {
+        if (password.value !== passwordConfirm.value) {
+            alert("Lozinke se ne podudaraju");
+            return;
+        }
+
+        register({
             username: username.value,
             password: password.value,
-        };
+            passwordConfirm: passwordConfirm.value
+        });
+    });
+
+    const register = (loginData) => {
+
         const response = fetch(
             "https://www.fulek.com/data/api/user/register",
             {

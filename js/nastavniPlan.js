@@ -20,21 +20,32 @@
         return dataJson.data;
     };
 
-    const getKolegij = async (id) => {
-        const response = fetch(
-            `https://www.fulek.com/data/api/supit//get-curriculum/${id}`,
-            {
-                method: "GET",
-                headers: {
-                    Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-                    "Content-Type": "application/json",
-                },
-            }
-        );
-
-        const result = await response;
-        const data = await result.json();
-        if (data.isSuccess) return data.data;
+    // const getKolegij = async (id) => {
+    //     const response = fetch(
+    //         `https://www.fulek.com/data/api/supit//get-curriculum/${id}`,
+    //         {
+    //             method: "GET",
+    //             headers: {
+    //                 Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    //                 "Content-Type": "application/json",
+    //             },
+    //         }
+    //     );
+    //
+    //     const result = await response;
+    //     const data = await result.json();
+    //     if (data.isSuccess) return data.data;
+    // };
+    const getKolegij = (id) => {
+        return $.ajax({
+            url: `https://www.fulek.com/data/api/supit/get-curriculum/${id}`,
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                "Content-Type": "application/json",
+            },
+            dataType: "json"
+        });
     };
 
     function autocomplete(inp, arr) {
@@ -147,12 +158,25 @@
         calculateFooter();
     };
 
-    const getKolegijDetails = async (event) => {
+    const handleKolegijDetails = async (event) => {
         if (event.explicitOriginalTarget.className === "btn bg-danger") return;
-        const kolegij = await getKolegij(event.currentTarget.id);
-        
+        const rez = await getKolegij(event.currentTarget.id);
+        if (rez.statusCode === 401) location.replace("../index.html");
+        if (!rez.isSuccess) {
+            alert(rez.errorMessages.join("\n"));
+        }
+        showData(rez.data);
         modal.show();
-        console.log(kolegij);
+    };
+
+    const showData = (data) => {
+        document.getElementById("kolegij-value").innerHTML = data.kolegij;
+        document.getElementById("ects-value").innerHTML = data.ects;
+        document.getElementById("predavanja-value").innerHTML = data.predavanja;
+        document.getElementById("sati-value").innerHTML = data.sati;
+        document.getElementById("semestar-value").innerHTML = data.semestar;
+        document.getElementById("tip-value").innerHTML = data.tip;
+        document.getElementById("vjezbe-value").innerHTML = data.vjezbe;
     };
 
     const createListItem = (kolegij) => {
@@ -171,7 +195,7 @@
             </button>
         </td>`;
         item.children[6].children[0].addEventListener("click", removeKolegij);
-        item.addEventListener("click", getKolegijDetails);
+        item.addEventListener("click", handleKolegijDetails);
         return item;
     };
 

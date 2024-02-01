@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../img/Algebra-logo.png">
     <title>Algebra</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -97,22 +98,45 @@
 <!-- Modal -->
 <div class="modal fade" id="KolegijModal" tabindex="-1" aria-labelledby="KolegijModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="KolegijModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="kolegij-value"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body kolegij-container">
+                <div class="column">
+
+                    <div class="kolegij-modal-text">
+                        Predavanja : <span id="predavanja-value"></span>
+                    </div>
+                    <div class="kolegij-modal-text">
+                        Semestar : <span id="semestar-value"></span>
+                    </div>
+                    <div class="kolegij-modal-text">
+                        Vježbe : <span id="vjezbe-value"></span>
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="kolegij-modal-text">
+                        ECTS : <span id="ects-value"></span>
+                    </div>
+                    <div class="kolegij-modal-text">
+                        Broj Sati : <span id="sati-value"></span>
+                    </div>
+                    <div class="kolegij-modal-text">
+                        Tip : <span id="tip-value"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+
     </div>
-  </div>
-  
+</div>
+
 
 <footer class="bottom-0">
     <img class="overflow-hidden" src="../img/zaiskri-bg.jpg" alt="Foother">

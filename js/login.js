@@ -9,18 +9,24 @@
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        login();
+
+        if (username.value === "" || password.value === "") {
+            alert("Popunite sva polja!");
+            return;
+        }
+
+        login({
+            username: username.value,
+            password: password.value
+        });
+
     });
 
-    const login = () => {
+    const login = (loginData) => {
         const button = document.querySelector("#submit-loading-button");
         button.innerHTML = `
             <div class="spinner-border" role="status">
             </div>`;
-        const loginData = {
-            username: username.value,
-            password: password.value,
-        };
 
         const response = fetch(
             "https://www.fulek.com/data/api/user/login",
