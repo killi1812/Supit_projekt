@@ -32,7 +32,7 @@
 
     function scrollToTargetAdjusted(elementId) {
         const element = document.getElementById(elementId);
-        const headerOffset = 65;
+        const headerOffset = 180;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
