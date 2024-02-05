@@ -1,151 +1,186 @@
 <!DOCTYPE html>
 <html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="../img/Algebra-logo.png">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../img/Algebra-logo.png" />
     <title>Algebra</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/nastavniPlan.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top" data-bs-theme="dark">
-    <div class="container-fluid">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/nastavniPlan.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md bg-body-tertiary sticky-top"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">
-            <img class="logo" src="../img/Algebra-logo.png" alt="Algebra">
+          <img class="logo" src="../img/Algebra-logo.png" alt="Algebra" />
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#smallNavBar"
-                aria-controls="smallNavBar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#smallNavBar"
+          aria-controls="smallNavBar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="smallNavBar">
-            <ul id="navbar-list" class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Početna</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="o-nama.html">O nama</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="novosti.html">Novosti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="kontakModal()">Kontakti</a>
-                </li>
-                <li id="nastavni-plan" class="nav-item">
-                    <a class="nav-link active" href="nastavniPlan.html">Nastavni Plan</a>
-                </li>
-                <li id="login-register-label" class="nav-item right-align flex-item">
-                </li>
-            </ul>
+          <ul
+            id="navbar-list"
+            class="navbar-nav me-auto mb-2 mb-lg-0 nav-links"
+          >
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Početna</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="o-nama.html">O nama</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="novosti.html">Novosti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="kontakModal()">Kontakti</a>
+            </li>
+            <li id="nastavni-plan" class="nav-item">
+              <a class="nav-link active" href="nastavniPlan.html"
+                >Nastavni Plan</a
+              >
+            </li>
+            <li
+              id="login-register-label"
+              class="nav-item right-align flex-item"
+            ></li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-    </div>
-</nav>
-
-<main>
-    <h1>
-        Nastavni Plan
-    </h1>
-    <hr>
-    <div class="nastavni-container">
+    <main>
+      <h1>Nastavni Plan</h1>
+      <hr />
+      <div class="nastavni-container">
         <div class="search-side">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="kolegij" name="kolegij">
-                <label for="kolegij">Naziv Kolegija:</label>
-            </div>
-            <button id="submit-kolegiji" class="btn bg-primary" type="button">Dodaj</button>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="kolegij"
+              name="kolegij"
+            />
+            <label for="kolegij">Naziv Kolegija:</label>
+          </div>
+          <button id="submit-kolegiji" class="btn bg-primary" type="button">
+            Dodaj
+          </button>
         </div>
 
         <div class="list-side">
-            <table id="kolegij-table" class="greyGridTable">
-                <thead>
-                <tr>
-                    <th>Kolegij</th>
-                    <th class="hide-phone">ECTS</th>
-                    <th class="hide-phone">Sati</th>
-                    <th class="hide-phone">Predavanja</th>
-                    <th class="hide-phone">Vježbe</th>
-                    <th class="hide-phone">Tip</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <td>Ukupno</td>
-                    <td class="hide-phone"></td>
-                    <td  class="hide-phone"></td>
-                    <td  class="hide-phone"></td>
-                    <td  class="hide-phone"></td>
-                    <td  class="hide-phone"></td>
-                    <td  class="hide-phone"></td>
-                </tr>
-                </tfoot>
-            </table>
+          <table id="kolegij-table" class="greyGridTable">
+            <thead>
+              <tr>
+                <th>Kolegij</th>
+                <th class="hide-phone">ECTS</th>
+                <th class="hide-phone">Sati</th>
+                <th class="hide-phone">Predavanja</th>
+                <th class="hide-phone">Vježbe</th>
+                <th class="hide-phone">Tip</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td>Ukupno</td>
+                <td class="hide-phone"></td>
+                <td class="hide-phone"></td>
+                <td class="hide-phone"></td>
+                <td class="hide-phone"></td>
+                <td class="hide-phone"></td>
+                <td class="hide-phone"></td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
-    </div>
-</main>
+      </div>
+    </main>
 
-
-<!-- Modal -->
-<div class="modal fade" id="KolegijModal" tabindex="-1" aria-labelledby="KolegijModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="KolegijModal"
+      tabindex="-1"
+      aria-labelledby="KolegijModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="kolegij-value"></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="kolegij-value"></h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body kolegij-container">
+            <div class="column">
+              <div class="kolegij-modal-text">
+                Predavanja : <span id="predavanja-value"></span>
+              </div>
+              <div class="kolegij-modal-text">
+                Semestar : <span id="semestar-value"></span>
+              </div>
+              <div class="kolegij-modal-text">
+                Vježbe : <span id="vjezbe-value"></span>
+              </div>
             </div>
-            <div class="modal-body kolegij-container">
-                <div class="column">
-
-                    <div class="kolegij-modal-text">
-                        Predavanja : <span id="predavanja-value"></span>
-                    </div>
-                    <div class="kolegij-modal-text">
-                        Semestar : <span id="semestar-value"></span>
-                    </div>
-                    <div class="kolegij-modal-text">
-                        Vježbe : <span id="vjezbe-value"></span>
-                    </div>
-
-                </div>
-                <div class="column">
-                    <div class="kolegij-modal-text">
-                        ECTS : <span id="ects-value"></span>
-                    </div>
-                    <div class="kolegij-modal-text">
-                        Broj Sati : <span id="sati-value"></span>
-                    </div>
-                    <div class="kolegij-modal-text">
-                        Tip : <span id="tip-value"></span>
-                    </div>
-                </div>
+            <div class="column">
+              <div class="kolegij-modal-text">
+                ECTS : <span id="ects-value"></span>
+              </div>
+              <div class="kolegij-modal-text">
+                Broj Sati : <span id="sati-value"></span>
+              </div>
+              <div class="kolegij-modal-text">
+                Tip : <span id="tip-value"></span>
+              </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
-
+      </div>
     </div>
-</div>
 
+    <footer class="bottom-0">
+      <img class="overflow-hidden" src="../img/zaiskri-bg.jpg" alt="Foother" />
+      <p class="center-text-on">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
+    </footer>
 
-<footer class="bottom-0">
-    <img class="overflow-hidden" src="../img/zaiskri-bg.jpg" alt="Foother">
-    <p class="center-text-on">BUDI IZVRSTAN U ONOM ŠTO VOLIŠ</p>
-</footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="../js/bootstrap.bundle.js"></script>
-<script src="../js/nastavniPlan.js"></script>
-<script src="../js/kontakModal.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/nastavniPlan.js"></script>
+    <script src="../js/kontakModal.js"></script>
+  </body>
 </html>

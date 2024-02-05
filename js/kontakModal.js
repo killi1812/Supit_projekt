@@ -1,5 +1,4 @@
 (() => {
-
   const kontakModalInit = () => {
     const modal = document.createElement("div");
 
@@ -7,13 +6,13 @@
     modal.classList.add("fade");
     modal.setAttribute("tabindex", "-1");
     modal.setAttribute("aria-hidden", "true");
-    modal.setAttribute("data-bs-backdrop","static");
-  
+    modal.setAttribute("data-bs-backdrop", "static");
+
     modal.id = "algebra-modal";
-     modal.addEventListener("click", (e) => {
-       if (e.target !== document.getElementById("algebra-modal")) return;
-       closeModal();
-     });
+    modal.addEventListener("click", (e) => {
+      if (e.target !== document.getElementById("algebra-modal")) return;
+      closeModal();
+    });
 
     modal.innerHTML = `
           <div class="modal-dialog phone-container">
@@ -57,20 +56,18 @@
             </div>
           </div>
        `;
-  
+
     document.body.append(modal);
-  }
+  };
   const closeModal = () => {
-    //TODO nece se clzati drugi put
     const algebraModal = bootstrap.Modal.getInstance(
       document.getElementById("algebra-modal")
     );
     algebraModal.hide();
   };
-  
-kontakModalInit();
 
-})()
+  kontakModalInit();
+})();
 
 const kontakModal = () => {
   const algebramodal = document.getElementById("algebra-modal");

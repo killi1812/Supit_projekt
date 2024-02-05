@@ -37,7 +37,7 @@ export const navitems = (path) => {
             loginLabel.appendChild(createLink("Prijavi se", `${path}/login.html`));
         }
     }
-    const nastavniPlanNavItem = (nastavniPlanHref) => {
+    const nastavniPlanNavItem = () => {
         const li = document.querySelector("#nastavni-plan");
         if (!sessionStorage.getItem("token")) {
             li.style.display = "none";

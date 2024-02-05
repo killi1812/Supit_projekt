@@ -22,43 +22,39 @@
 
     });
 
-    const login = (loginData) => {
+    const login = async (loginData) => {
         const button = document.querySelector("#submit-loading-button");
         button.innerHTML = `
             <div class="spinner-border" role="status">
             </div>`;
 
-        const response = fetch(
-            "https://www.fulek.com/data/api/user/login",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(loginData),
-            }
-        );
-
-        response.then((result) =>
-            result
-                .json()
-                .then(({data, isSuccess, errorMessages}) => {
-                    if (!isSuccess && errorMessages.length > 0) {
-                        alert(errorMessages.join("\n"));
-                        return;
+            try{
+                const response = fetch(
+                    "https://www.fulek.com/data/api/user/login",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(loginData),
                     }
-                    storeUserSessionLogin(data.username, data.token);
-                    location.replace("../index.html");
-                })
-                .catch(() => alert("wrong email or password"))
-                .finally(() => {
-                    button.innerText = "Prijavi se";
-                })
-        );
-
-        const storeUserSessionLogin = (username, token) => {
-            sessionStorage.setItem("username", username);
-            sessionStorage.setItem("token", token);
-        }
+                );
+        
+                const rez = await response;
+                const data = await rez.json();
+                if (!data.isSuccess && data.errorMessages.length > 0) {
+                    alert(data.errorMessages.join("\n"));
+                    return;
+                }
+                sessionStorage.setItem("username", data.data.username);
+                sessionStorage.setItem("token", data.data.token);
+                location.replace("../index.html");
+            }
+            catch{
+                alert("Došlo je do pogreške prilikom prijave");
+            }
+            finally{
+                button.innerText = "Prijavi se";
+            }
     }
 })();
