@@ -3,6 +3,7 @@
         navitems(".");
     });
 
+    // TODO napisati sve novo jer da nesto je isto
     const getAllKolegij = async () => {
         const response = fetch(
             "https://www.fulek.com/data/api/supit/curriculum-list/hr",
@@ -20,22 +21,6 @@
         return dataJson.data;
     };
 
-    // const getKolegij = async (id) => {
-    //     const response = fetch(
-    //         `https://www.fulek.com/data/api/supit//get-curriculum/${id}`,
-    //         {
-    //             method: "GET",
-    //             headers: {
-    //                 Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-    //                 "Content-Type": "application/json",
-    //             },
-    //         }
-    //     );
-    //
-    //     const result = await response;
-    //     const data = await result.json();
-    //     if (data.isSuccess) return data.data;
-    // };
     const getKolegij = (id) => {
         return $.ajax({
             url: `https://www.fulek.com/data/api/supit/get-curriculum/${id}`,
@@ -48,76 +33,36 @@
         });
     };
 
-    function autocomplete(inp, arr) {
-        var currentFocus;
-        inp.addEventListener("input", function (e) {
-            var a,
-                b,
-                i,
-                val = this.value;
+    function autocomplete(input, array) {
+        let currentFocus;
+        $(input).on("input", function () {
+            let val = this.value;
             closeAllLists();
-            if (!val) {
-                return false;
-            }
+            if (!val) return false;
             currentFocus = -1;
-            a = document.createElement("DIV");
-            a.setAttribute("id", this.id + "autocomplete-list");
-            a.setAttribute("class", "autocomplete-items");
-            this.parentNode.appendChild(a);
-            for (i = 0; i < arr.length; i++) {
-                if (
-                    arr[i].kolegij.substr(0, val.length).toUpperCase() ==
-                    val.toUpperCase()
-                ) {
-                    b = document.createElement("DIV");
-                    b.innerHTML =
-                        "<strong>" + arr[i].kolegij.substr(0, val.length) + "</strong>";
-                    b.innerHTML += arr[i].kolegij.substr(val.length);
-                    b.innerHTML += "<input type='hidden' value='" + arr[i].kolegij + "'>";
-                    b.addEventListener("click", function (e) {
-                        inp.value = this.getElementsByTagName("input")[0].value;
+            let autocompleteList = document.createElement("DIV");
+            autocompleteList.setAttribute("id", this.id + "autocomplete-list");
+            autocompleteList.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(autocompleteList);
+            for (let i = 0; i < array.length; i++) {
+                if (array[i].kolegij.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    let item = document.createElement("DIV");
+                    item.innerHTML = "<strong>" + array[i].kolegij.substr(0, val.length) + "</strong>";
+                    item.innerHTML += array[i].kolegij.substr(val.length);
+                    item.innerHTML += "<input type='hidden' value='" + array[i].kolegij + "'>";
+                    $(item).on("click", function (e) {
+                        input.value = this.getElementsByTagName("input")[0].value;
                         closeAllLists();
                     });
-                    a.appendChild(b);
+                    autocompleteList.appendChild(item);
                 }
             }
         });
-        inp.addEventListener("keydown", function (e) {
-            var x = document.getElementById(this.id + "autocomplete-list");
-            if (x) x = x.getElementsByTagName("div");
-            if (e.keyCode == 40) {
-                currentFocus++;
-                addActive(x);
-            } else if (e.keyCode == 38) {
-                //up
-                currentFocus--;
-                addActive(x);
-            } else if (e.keyCode == 13) {
-                e.preventDefault();
-                if (currentFocus > -1) {
-                    if (x) x[currentFocus].click();
-                }
-            }
-        });
-
-        function addActive(x) {
-            if (!x) return false;
-            removeActive(x);
-            if (currentFocus >= x.length) currentFocus = 0;
-            if (currentFocus < 0) currentFocus = x.length - 1;
-            x[currentFocus].classList.add("autocomplete-active");
-        }
-
-        function removeActive(x) {
-            for (var i = 0; i < x.length; i++) {
-                x[i].classList.remove("autocomplete-active");
-            }
-        }
 
         function closeAllLists(elmnt) {
-            var x = document.getElementsByClassName("autocomplete-items");
-            for (var i = 0; i < x.length; i++) {
-                if (elmnt != x[i] && elmnt != inp) {
+            let x = document.getElementsByClassName("autocomplete-items");
+            for (let i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != input) {
                     x[i].parentNode.removeChild(x[i]);
                 }
             }
@@ -221,7 +166,7 @@
         calculateFooter();
     };
 
-    const modal = new bootstrap.Modal(document.getElementById("KolegijModal"),{});
+    const modal = new bootstrap.Modal(document.getElementById("KolegijModal"), {});
 
     const kolegiji = await getAllKolegij();
     autocomplete(document.getElementById("kolegij"), kolegiji);

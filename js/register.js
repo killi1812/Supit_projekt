@@ -29,28 +29,22 @@
     });
 
     const register = (loginData) => {
-
-        const response = fetch(
-            "https://www.fulek.com/data/api/user/register",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(loginData),
+        $.ajax({
+            url: "https://www.fulek.com/data/api/user/register",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(loginData),
+            success: function(response) {
+                if (response.isSuccess) {
+                    location.replace("login.html");
+                    alert("Account created please login");
+                } else if (response.errorMessages.length > 0) {
+                    alert(response.errorMessages.join("\n"));
+                }
+            },
+            error: function() {
+                alert("Error registering try again later");
             }
-        );
-        response.then((result) =>
-            result
-                .json()
-                .then(({isSuccess, errorMessages}) => {
-                    if (isSuccess) {
-                        location.replace("login.html");
-                        alert("Accont created please login");
-                    } else if (errorMessages.length > 0)
-                        alert(errorMessages.join("\n"));
-                })
-                .catch(() => alert("Error registering try again later"))
-        );
+        });
     }
 })();
