@@ -34,16 +34,14 @@
   };
 
   function autocomplete(input, array) {
-    let index;
     $(input).on("input", function () {
       let val = this.value;
-      closeAllLists();
+      CloseList();
       if (!val) return false;
-      currentFocus = -1;
-      let autocompleteList = document.createElement("DIV");
-      autocompleteList.setAttribute("id", this.id + "autocomplete-list");
-      autocompleteList.setAttribute("class", "autocomplete-items");
-      this.parentNode.appendChild(autocompleteList);
+      let itemsList = document.createElement("DIV");
+      itemsList.setAttribute("id", this.id + "-list");
+      itemsList.setAttribute("class", "autocomplete-items");
+      this.parentNode.appendChild(itemsList);
       for (let i = 0; i < array.length; i++) {
         if (
           array[i].kolegij.substr(0, val.length).toUpperCase() ==
@@ -57,23 +55,22 @@
             "<input type='hidden' value='" + array[i].kolegij + "'>";
           $(item).on("click", function (e) {
             input.value = this.getElementsByTagName("input")[0].value;
-            closeAllLists();
+            CloseList();
           });
-          autocompleteList.appendChild(item);
+          itemsList.appendChild(item);
         }
       }
     });
-    function closeAllLists(elmnt) {
-      let x = document.getElementsByClassName("autocomplete-items");
-      for (let i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != input) {
-          x[i].parentNode.removeChild(x[i]); 
-        }
+
+    function CloseList() {
+      let lists = document.getElementsByClassName("autocomplete-items");
+      for (let i = 0; i < lists.length; i++) {
+        lists[i].parentNode.removeChild(lists[i]);
       }
     }
 
     document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
+      CloseList();
     });
   }
 
@@ -159,7 +156,11 @@
     const lista = document.querySelector("#kolegij-table");
     if (kolegijiDictionary.length === 0) return;
     const kolegij = kolegijiDictionary[value];
-    if (!kolegij) alert(`Kolegij ${value} ne postoji`);
+    if (!kolegij) {
+      alert(`Kolegij ${value} ne postoji`);
+      return;
+    }
+
     for (let i = 0; i < lista.children.length; i++) {
       // ovdje mora biti dva jednako zato jer je jedno string a drugo number
       if (lista.children[i].id == kolegij.id) {
