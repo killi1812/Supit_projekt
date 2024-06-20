@@ -62,15 +62,17 @@
       }
     });
 
-    function CloseList() {
+    function CloseList(elmnt) {
       let lists = document.getElementsByClassName("autocomplete-items");
       for (let i = 0; i < lists.length; i++) {
-        lists[i].parentNode.removeChild(lists[i]);
+        if (elmnt != lists[i] && elmnt != input) {
+          lists[i].parentNode.removeChild(lists[i]); 
+        }
       }
     }
 
     document.addEventListener("click", function (e) {
-      CloseList();
+      CloseList(e);
     });
   }
 
