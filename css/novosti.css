@@ -59,6 +59,7 @@
 
 .video-novost > video {
     border-radius: 5px;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
